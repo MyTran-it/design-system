@@ -1,0 +1,15 @@
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+//Line-height equal to 140% of font-size
+@mixin line-height($sizeValue: 16) {
+  line-height: (1.4 * $sizeValue) + px; //fallback for old browsers
+  line-height: (1.4 * 0.125 * $sizeValue) + rem;
+}
+
+@mixin rhythm($sizeValue: 16) {
+  @include font-size($sizeValue);
+  @include line-height($sizeValue);
+}

@@ -1,0 +1,71 @@
+.mh--modal[aria-haspopup='true'] {
+  opacity: 1;
+  transition: opacity 240ms cubic-bezier(0, 0, 0.3, 1), visibility 0ms linear;
+  visibility: inherit;
+}
+
+.mh--modal {
+  opacity: 0;
+  transition: opacity 240ms cubic-bezier(0.4, 0.14, 1, 1),
+    visibility 0ms linear 240ms;
+  visibility: hidden;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+
+  &.shift {
+    &__sm {
+      top: 5rem;
+    }
+    &__xl {
+      top: 8rem;
+    }
+  }
+
+  &--content {
+    min-height: 50%;
+    background: var(--clr-background-03);
+    color: var(--clr-text-01);
+    border-radius: 0 0 2.5rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+
+    &-header {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 2rem;
+
+      &__heading {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        svg {
+          height: 3.15rem;
+          margin-bottom: auto;
+          color: var(--clr-interactive-warning);
+        }
+      }
+    }
+
+    &.danger {
+      .mh--modal--content-header .mh--modal--content-header__heading {
+        svg {
+          color: var(--clr-support-error);
+        }
+      }
+
+      .warning {
+        background-color: var(--clr-support-error);
+      }
+    }
+  }
+}

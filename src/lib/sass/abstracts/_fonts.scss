@@ -1,0 +1,31 @@
+@import url('https://fonts.cdnfonts.com/css/junction');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+$fonts: (
+  font-family: (
+    primary: Source Sans Pro,
+    secondary: Junction,
+  ),
+
+  font-size: (
+    12: 1.5rem,
+    14: 1.75rem,
+    15: 1.875rem,
+    16: 2rem,
+    18: 2.25rem,
+    17: 2.125rem,
+    19: 2.375rem,
+    20: 2.5rem,
+    21: 2.625rem,
+    24: 3rem,
+    30: 3.75rem,
+  ),
+
+  font-weight: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  ),
+);

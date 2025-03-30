@@ -1,0 +1,118 @@
+@use '../abstracts/mixins' as *;
+hr.form-divider {
+  height: 2px;
+  background-color: var(--clr-background-01);
+  border: none;
+  width: auto;
+  margin: 0 -2rem;
+
+  &.dark {
+    background-color: var(--clr-background-03);
+  }
+}
+
+.mh--tile--expandable {
+  position: relative;
+
+  margin: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--clr-text-02);
+
+  &[aria-expanded='true'] {
+    border-radius: 1rem;
+    background-color: var(--clr-background-02);
+    border-bottom: 0;
+    transition: background-color 500ms;
+  }
+
+  .mh--tile--expandable--title {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: start;
+
+    &-content {
+      width: 90%;
+
+      &__label {
+        @include rhythm(18);
+        font-weight: var(--fw-semibold);
+      }
+
+      &__text-info {
+        @include rhythm(14);
+        font-weight: var(--fw-light);
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      transition: transform 500ms ease-in-out;
+      transform: rotate(0deg);
+
+      &[aria-expanded='true'] {
+        transition: transform 500ms;
+        transform: rotate(180deg);
+      }
+    }
+
+    &:disabled {
+      color: var(--clr-text-02);
+    }
+  }
+
+  &--content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+
+    > div {
+      padding: 0 1rem;
+      overflow: hidden;
+    }
+
+    &[aria-expanded='true'] {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.mh--tile {
+  display: flow-root;
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 2rem;
+  min-height: 8rem;
+  
+  &.noColor {
+    background: var(--clr-background-01);
+    color: var(--clr-text-03);
+  }
+
+  &.light {
+    background: var(--clr-background-02);
+    color: var(--clr-text-03);
+  }
+
+  &.dark {
+    background: var(--clr-background-03);
+    color: var(--clr-text-01);
+  }
+
+  &.disabled {
+    background: var(--clr-disabled-02);
+  }
+}
+
+.horizontal {
+  --marginWidth: 1rem;
+  display: flex;
+  min-width: var(--marginWidth);
+}
+
+.vertical {
+  --marginHeight: 1rem;
+  display: flex;
+  min-height: var(--marginHeight);
+}

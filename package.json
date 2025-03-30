@@ -1,0 +1,127 @@
+{
+  "name": "Design-system",
+  "version": "1.1.6",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "test:unit": "vitest",
+    "lint": "prettier --plugin-search-dir . --check .",
+    "format": "prettier --plugin-search-dir . --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "exports": {
+    "./Button": "./dist/components/Button/button.svelte",
+    "./ButtonAnimation": "./dist/components/Button/AnimationButton/buttonAnimation.svelte",
+    "./ButtonCircle": "./dist/components/Button/CircleButton/buttonCircle.svelte",
+    "./ButtonSet": "./dist/components/Button/buttonSet.svelte",
+    "./InfoCard": "./dist/components/InfoCard/infoCard.svelte",
+    "./InfoTag": "./dist/components/Tag/InfoTag/infoTag.svelte",
+    "./Notification": "./dist/components/Notification/notification.svelte",
+    "./Search": "./dist/components/Search/search.svelte",
+    "./SliderToggle": "./dist/components/SliderToggle/sliderToggle.svelte",
+    "./Tag": "./dist/components/Tag/tag.svelte",
+    "./Toggle": "./dist/components/Toggle/toggle.svelte",
+    "./FlagCheckbox": "./dist/components/Toggle/FlagCheckbox/flagCheckbox.svelte",
+    "./BigSquareButton": "./dist/components/Button/BigSquareButton/bigSquareButton.svelte",
+    "./BigRectangleButton": "./dist/components/Button/BigRectangleButton/bigRectangleButton.svelte",
+    "./ButtonCard": "./dist/components/Button/CardButton/buttonCard.svelte",
+    "./Section": "./dist/components/Section/section.svelte",
+    "./Icon": "./dist/components/Icon/icon.svelte",
+    "./Input": "./dist/components/Input/Input.svelte",
+    "./PasswordInput": "./dist/components/Input/passwordInput.svelte",
+    "./InputSelect": "./dist/components/Input/InputSelect/inputSelect.svelte",
+    "./FormRow": "./dist/components/Input/FormRow/formRow.svelte",
+    "./FileUploader": "./dist/components/Input/FileUpload/fileUploader.svelte",
+    "./FileUploaderButton": "./dist/components/Input/FileUpload/fileUploaderButton.svelte",
+    "./TakePhoto": "./dist/components/Input/FileUpload/takePhoto.svelte",
+    "./DatePicker": "./dist/components/Input/DatePicker/datePicker.svelte",
+    "./Tooltip": "./dist/components/Tooltip/tooltip.svelte",
+    "./Header": "./dist/components/Header/header.svelte",
+    "./MainHeader": "./dist/components/Header/mainHeader.svelte",
+    "./HeaderInfo": "./dist/components/Header/headerInfo.svelte",
+    "./HeaderSection": "./dist/components/Header/headerSection.svelte",
+    "./PageTitle": "./dist/components/Header/pageTitle.svelte",
+    "./ProgressBar": "./dist/components/Header/ProgressBar/progressBar.svelte",
+    "./SearchPatient": "./dist/components/Header/SearchPatient/searchPatient.svelte",
+    "./Tabs": "./dist/components/Header/Tabs/tabs.svelte",
+    "./TabItem": "./dist/components/Header/Tabs/tabItem.svelte",
+    "./Tile": "./dist/components/Tile/tile.svelte",
+    "./Summary": "./dist/components/Summary/summary.svelte",
+    "./Modal": "./dist/components/Modal/modal.svelte",
+    "./Footer": "./dist/components/Footer/footer.svelte",
+    "./FooterItem": "./dist/components/Footer/footerItem.svelte",
+    "./BubbleProgress": "./dist/components/BubbleLineProgress/bubbleProgress.svelte",
+    "./BubblePoint": "./dist/components/BubbleLineProgress/bubblePoint.svelte",
+    "./BubbleDetail": "./dist/components/BubbleLineProgress/bubbleDetail.svelte",
+    "./TextArea": "./dist/components/Input/TextArea/textArea.svelte",
+    "./Marginer": "./dist/components/Marginer/marginer.svelte",
+    "./Link": "./dist/components/Link/link.svelte",
+    "./ChronoTimer": "./dist/components/ChronoTimer/chronoTimer.svelte",
+    "./Pagination": "./dist/components/Pagination/pagination.svelte",
+    "./scss": "./dist/sass/style.scss",
+    "./ClickOutside": "./dist/utils/clickOutside.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "svelte": "^4.0.5"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.26",
+    "@storybook/addon-interactions": "^7.0.26",
+    "@storybook/addon-links": "^7.0.26",
+    "@storybook/addon-styling": "^1.3.5",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/svelte": "^7.0.6",
+    "@storybook/sveltekit": "^7.0.26",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@sveltejs/adapter-auto": "^2.1.0",
+    "@sveltejs/kit": "^1.22.1",
+    "@sveltejs/package": "^2.1.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-svelte": "^2.10.1",
+    "publint": "^0.1.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.26",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.5",
+    "tslib": "^2.6.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.4.2",
+    "vitest": "^0.25.8"
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "prettier": {
+    "insertFinalNewline": false,
+    "semi": false,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 80,
+    "pluginSearchDirs": [
+      "."
+    ],
+    "overrides": [
+      {
+        "files": "*.svelte",
+        "options": {
+          "parser": "svelte"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "sass": "^1.64.0",
+    "svelte-preprocess": "^5.0.4"
+  }
+}

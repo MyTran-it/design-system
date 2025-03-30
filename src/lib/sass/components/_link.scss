@@ -1,0 +1,25 @@
+.mh--link {
+  color: var(--clr-interactive-secondary);
+  text-decoration: underline;
+  cursor: pointer;
+
+  &.normalStyle {
+    color: var(--clr-support-link);
+  }
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: var(--clr-hover-secondary);
+
+    &.normalStyle {
+      color: var(--clr-support-link);
+    }
+  }
+
+  &[aria-disabled='true'],
+  &[aria-disabled='true']:visited {
+    color: var(--clr-disabled-03);
+    pointer-events: none;
+  }
+}

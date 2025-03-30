@@ -1,0 +1,31 @@
+.mh--footer {
+  background: var(--clr-background-03);
+  color: var(--clr-text-01);
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  padding: 0 15%;
+
+  .mh--footer--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+
+    svg {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+
+    &:disabled {
+      color: var(--clr-disabled-04);
+      cursor: not-allowed;
+    }
+  }
+}
